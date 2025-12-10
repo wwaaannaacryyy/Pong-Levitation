@@ -1,4 +1,4 @@
-$fn=64;
+$fn = 64;
 round_corner = 15;
 
 nozzle_kit();
@@ -21,6 +21,12 @@ module nozzle(){
         frame_ring();
     }
 }
+
+//hull() {
+//    frame_square();
+//    translate([0, 0, 120])
+//    cylinder(d=25, h=1, center = true);
+//}
 
 module frame_ring() {
     difference() {

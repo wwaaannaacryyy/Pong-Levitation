@@ -1,4 +1,5 @@
 echo("Работа Пушкарева Глеба");
+use <nozzle.scad>
 $fn=64;
 round_corner = 15;
 
@@ -6,11 +7,21 @@ round_corner = 15;
 //color("green")
 //cube([129, 129, 1], center = true);
 
+difference(){
+    nozzle_set()
+    translate([0,0,120])
+    cylinder(d=25, h=50, center=true);
+}
+//nozzle_kit();
+//translate([0, 0, 120+20/2+0])
 
-nozzle_kit();
-translate([0, 0, 120+20/2+0])
+//trumpet();
 
-trumpet();
+module nozzle_set() {
+    nozzle_kit();
+    translate([0,0,120+20/2])
+    trumpet();
+}
 
 module trumpet() {
     difference(){
@@ -24,3 +35,8 @@ module trumpet() {
         cylinder(d=25-2, h=20, center=true);
     }
 }
+
+
+
+
+
